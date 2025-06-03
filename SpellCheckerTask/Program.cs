@@ -27,6 +27,68 @@ namespace SpellCheckerTask
             //Add these suggested words to a spelling list that the user can save as a file to work on
             //their own spelling
 
+            //1
+            //Console.WriteLine("Enter a word");
+            //string word = Console.ReadLine().ToUpper();
+            //bool valid = false;
+            //for (int i = 0; i < words.Length; i++)
+            //{
+            //    if (words[i] == word)
+            //    {
+            //        valid = true;
+            //    }
+            //}
+            //if (valid == true)
+            //{
+            //    Console.WriteLine("Spelled correctly");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Spelled incorrectly");
+            //}
+
+            //2, 3 and 4
+            double validCount = 0;
+            Console.WriteLine("Enter some words");
+            string[] input = Console.ReadLine().Split(' ');
+            for (int i = 0; i < input.Length; i++)
+            {
+                for (int j = 0; j < words.Length; j++)
+                {
+                    if (input[i].ToUpper() == words[j])
+                    {
+                        validCount++;
+                    }
+                }
+            }
+            
+            double percentage = (validCount / input.Length) * 100;
+            Console.WriteLine(validCount);
+            Console.WriteLine(input.Length);
+            Console.WriteLine(percentage);
+            
+            if (validCount == input.Length)
+            {
+                Console.WriteLine("All spelled correctly");
+                Console.WriteLine($"Your percentage is {percentage}%");
+            }
+            else
+            {
+                Console.WriteLine($"{input.Length - validCount} spelled incorrectly");
+                Console.WriteLine($"Your percentage is {percentage}");
+            }
+            bool correct = false;
+            for(int i = 0; i < input.Length;i++)
+            {
+                for (int j = 0;j < words.Length; j++)
+                {
+                    if (input[i].ToUpper() == words[j])
+                    {
+                        correct = true;
+                    }
+                }
+            }
+
 
 
         }
@@ -44,5 +106,8 @@ namespace SpellCheckerTask
             words.Close();
             return dictionaryData;
         }
+
+        
+
     }
 }
