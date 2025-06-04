@@ -28,24 +28,24 @@ namespace SpellCheckerTask
             //their own spelling
 
             //1
-            //Console.WriteLine("Enter a word");
-            //string word = Console.ReadLine().ToUpper();
-            //bool valid = false;
-            //for (int i = 0; i < words.Length; i++)
-            //{
-            //    if (words[i] == word)
-            //    {
-            //        valid = true;
-            //    }
-            //}
-            //if (valid == true)
-            //{
-            //    Console.WriteLine("Spelled correctly");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Spelled incorrectly");
-            //}
+            Console.WriteLine("Enter a word");
+            string word = Console.ReadLine().ToUpper();
+            bool valid = false;
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (words[i] == word)
+                {
+                    valid = true;
+                }
+            }
+            if (valid == true)
+            {
+                Console.WriteLine("Spelled correctly");
+            }
+            else
+            {
+                Console.WriteLine("Spelled incorrectly");
+            }
 
             //2, 3 and 4
             double validCount = 0;
@@ -103,11 +103,7 @@ namespace SpellCheckerTask
             }
 
 
-            //StreamWriter fileToWrite = new StreamWriter("WrongWords.txt", true);
-            //fileToWrite.WriteLine("Some text added to a file");
-            //string output = "This text written needs to be written to file";
-            //fileToWrite.WriteLine(output);
-            //fileToWrite.Close(); // saves the file
+            
 
 
 
