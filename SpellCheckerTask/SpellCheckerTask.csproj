@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Update="WrongWords.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="WordsFile.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

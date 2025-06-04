@@ -61,12 +61,12 @@ namespace SpellCheckerTask
                     }
                 }
             }
-            
+
             double percentage = (validCount / input.Length) * 100;
             Console.WriteLine(validCount);
             Console.WriteLine(input.Length);
             Console.WriteLine(percentage);
-            
+
             if (validCount == input.Length)
             {
                 Console.WriteLine("All spelled correctly");
@@ -75,19 +75,40 @@ namespace SpellCheckerTask
             else
             {
                 Console.WriteLine($"{input.Length - validCount} spelled incorrectly");
-                Console.WriteLine($"Your percentage is {percentage}");
+                Console.WriteLine($"Your percentage is {percentage}%");
             }
-            bool correct = false;
-            for(int i = 0; i < input.Length;i++)
+
+            int x = 0;
+            int temp = 1;
+            while (x != input.Length)
             {
-                for (int j = 0;j < words.Length; j++)
+                for (int i = 0; i < input.Length; i++)
                 {
-                    if (input[i].ToUpper() == words[j])
+                    if (temp == x)
                     {
-                        correct = true;
+                        StreamWriter fileToWrite = new StreamWriter("C:\\Users\\rubya\\Source\\Repos\\spell-checker-task-21rabson\\SpellCheckerTask\\WrongWords.txt", true);
+                        fileToWrite.WriteLine(input[i+1]);
+                        fileToWrite.Close();
+                    }
+                    temp = x;
+
+                    for (int j = 0; j < words.Length; j++)
+                    {
+                        if (input[i].ToUpper() == words[j])
+                        {
+                            x++;
+                        }
                     }
                 }
             }
+
+
+            //StreamWriter fileToWrite = new StreamWriter("WrongWords.txt", true);
+            //fileToWrite.WriteLine("Some text added to a file");
+            //string output = "This text written needs to be written to file";
+            //fileToWrite.WriteLine(output);
+            //fileToWrite.Close(); // saves the file
+
 
 
 
